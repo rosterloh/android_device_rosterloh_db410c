@@ -1,0 +1,13 @@
+type linaro, domain, mlstrustedsubject;
+type linaro_exec, exec_type, file_type;
+
+init_daemon_domain(linaro)
+
+allow linaro sysfs:file write;
+allow linaro proc:file write;
+allow linaro system_file:file execute_no_trans;
+allow linaro shell_exec:file rx_file_perms;
+
+allow linaro self:capability dac_override;
+
+permissive linaro;

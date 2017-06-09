@@ -1,0 +1,15 @@
+userdebug_or_eng(`
+    allow init su:process { transition dyntransition rlimitinh siginh };
+')
+
+allow init self:capability { sys_module };
+allow init self:tcp_socket create;
+allow init gatord:process { transition rlimitinh siginh };
+allow init kernel:system module_request;
+
+allow init tmpfs:lnk_file create_file_perms;
+allow init cache_file:dir mounton;
+allow init storage_file:dir mounton;
+allow init debugfs:dir mounton;
+domain_trans(init, rootfs, linaro)
+domain_trans(init, linaro_exec, linaro)

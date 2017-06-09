@@ -1,0 +1,3 @@
+add_lunch_combo db410c-user
+add_lunch_combo db410c-userdebug
+add_lunch_combo db410c-eng
